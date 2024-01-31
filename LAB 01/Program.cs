@@ -176,6 +176,70 @@ namespace LAB_01
 
             Console.WriteLine("{0} {1}", name, grade);
         }
+            //Question07
+         static double total = 0.0;
+             static void Question7()
+            {
+              Options();
+            }
+
+            static void Options()
+            {
+
+                Console.WriteLine(" ");
+                Console.WriteLine("Please Select an Option Number to Continue");
+                Console.WriteLine("1. Check Balance");
+                Console.WriteLine("2. Deposit Money");
+                Console.WriteLine("3. Cash Withdrawal");
+                Console.Write("Option Number: ");
+                int opt = Convert.ToInt32(Console.ReadLine());
+
+                switch (opt)
+                {
+                    case 1:
+                        CheckBalance();
+                        break;
+                    case 2:
+                        DepositMoney();
+                        break;
+                    case 3:
+                        CashWithdrawal();
+                        break;
+                    default:
+                        Console.WriteLine("Please Enter Valid Option.\nProgram Ended");
+                        break;
+                }
+            }   
+            static void CheckBalance()
+            {
+                Console.WriteLine("Account Balance = Rs." + total);
+                Options();
+            }
+
+            static void DepositMoney()
+            {
+                Console.Write("Deposit Amount: Rs. ");
+                double DepositAmount = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Money Deposited Successfully!");
+                total += DepositAmount;
+                Options();
+            }
+
+            static void CashWithdrawal()
+            {
+                Console.Write("Withdrawal Amount: ");
+                double WithdrawalAmount = Convert.ToDouble(Console.ReadLine());
+                if (WithdrawalAmount <= total)
+                {
+                    total -= WithdrawalAmount;
+                    Console.WriteLine("Collect Your Money");
+                }
+                else
+                {
+                    Console.WriteLine("Account Balance insufficient");
+                }
+                Options();
+            }
 
     }
     }
