@@ -15,6 +15,7 @@ namespace LAB_01
             Question3();
             Question4();
             Question5();
+            Question6();
             Console.ReadLine();
         }
             //QUESTION 01
@@ -112,7 +113,7 @@ namespace LAB_01
                 return Fibonacci(n - 1) + Fibonacci(n - 2);
             }
 
-            //Question 05
+            //Question05
             static void Question5()
             {
                 Console.WriteLine("Enter number: ");
@@ -127,6 +128,55 @@ namespace LAB_01
                 }
             }
 
+            //Question 06
+            static void Question6()
+            {
+                string grade = "";
+
+                Console.Write("Enter Your Name: ");
+                string name = Console.ReadLine();
+
+                int mark;
+
+                while (true)
+            {
+                Console.WriteLine("Enter marks: ");
+                mark = Convert.ToInt32(Console.ReadLine());
+
+                if (mark >= 0 && mark <= 100)
+                {
+                    if (mark >= 75)
+                    {
+                        grade = "A";
+                    }
+                    else if (mark >= 60)
+                    {
+                        grade = "B";
+                    }
+                    else if (mark >= 50)
+                    {
+                        grade = "C";
+                    }
+                    else if (mark >= 40)
+                    {
+                        grade = "D";
+                    }
+                    else
+                    {
+                        grade = "Failed";
+                    }
+
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("ERROR! Enter a valid mark between 0 and 100");
+                }
+            }
+
+            Console.WriteLine("{0} {1}", name, grade);
         }
+
+    }
     }
 
