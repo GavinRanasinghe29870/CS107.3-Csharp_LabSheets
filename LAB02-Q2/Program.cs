@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab2q2
+namespace LAB02_Q2
 {
 
     class BankAccount
